@@ -1,5 +1,6 @@
-//let a = prompt("What is your Age");
-//console.log(a);
+/* const prompt= require("prompt-sync")();
+let a = prompt("What is your Age");
+console.log(a); */
 // this will help to get the user input.
 
 //alert("This is Warrming please go back");
