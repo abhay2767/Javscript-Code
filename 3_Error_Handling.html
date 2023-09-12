@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello this callback tutorial</h1>
+
+    <script>
+        //Callbacks
+        console.log("Hello This is callback tutorial")
+        function loadScript(src, callback) {
+            let script = document.createElement('script')
+            script.src = src;
+            script.onload = function() {
+                console.log("Loaded script with src "+src)
+                callback(null,src); //here two parameter given one is "Error" and another is "src"
+            }
+            //This will alert you when the script will not loaded(Ie- Net connection cut ho jaye tab se kam karega)
+            script.onerror = function() {
+                alert("Error onloading scrirpt")
+                callback(new Error("src")) //Here we run callback when an Error occured
+            }
+            document.body.append(script)
+        }
+        //This is a collback function which have an argument
+        function hello(src){
+            //If any Error occure
+            
+            alert("Hello script is:- "+src)
+        }
+        function goodmorning(Error, src){
+            alert("Good Morning "+src)
+        }
+        loadScript('https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js',hello)
+
+    </script>
+</body>
+</html>
