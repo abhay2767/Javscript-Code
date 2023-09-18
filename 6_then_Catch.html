@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.then and .catch</title>
+</head>
+<body>
+    <h1>This is a .then and .catch</h1>
+    <script>
+        let p1 = new Promise((resolve, reject) => {
+            console.log("Promise-1 is pending")
+            setTimeout(()=>{
+                resolve(true) 
+            },5000)
+        })
+        let p2 = new Promise((resolve, reject) => {
+            console.log("Promise-2 is pending")
+            setTimeout(()=>{
+                reject(new Error("I am an Error and This is a syntxt to raise a Error in JS")) 
+            },3000)
+        })
+        //To get the value
+        p1.then((value)=>{
+            console.log(value)
+        },(error)=>{ //Handle the Error
+            console.log(error)
+        })
+        //To catch the Error
+        p2.catch((Error)=>{
+            console.log("Some error occured in promise2")
+        },(error)=>{ //Handle the error
+            console.log(error)
+        }) 
+    </script>
+    
+</body>
+</html>
