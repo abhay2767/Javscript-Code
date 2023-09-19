@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise API</title>
+</head>
+<body>
+    <h1>Promise API</h1>
+    <script>
+        console.log("We want to print all Promise at same time when all reloaded with their time")
+        let p1 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                //resolve("Value 1")
+                reject(new Error("Error"))
+            },1000)
+        });
+        let p2 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                resolve("Value 2")
+            },2000)
+        });
+        let p3 = new Promise((resolve,reject)=>{
+            setTimeout(()=>{
+                /* resolve("Value 3") */
+                reject(new Error("Error"))
+            },3000)
+        });
+        //This will print Synchronously (one by one mean withen given setTime)
+        /* p1.then((value)=>{
+            console.log(value)
+        })
+        p2.then((value)=>{
+            console.log(value)
+        })
+        p3.then((value)=>{
+            console.log(value)
+        }) */
+        //Here when all values resolve then alll print at same time
+        //"Promise.all" is a Promise Api which help us to print all promise after all promise resolve
+        let promise_all = Promise.all([p1,p2,p3])
+        promise_all.then((value)=>{
+            console.log(value)
+        })
+        /*Here is s cathc:- Now suppose if their are any promise rejected then what? 
+        (jo resolve promise h wo bhi print nhi hogi)*/
+        //"Promise.allSettled" this will help to print all resolve and also rejected promises
+        let promise_allSettle = Promise.allSettled([p1,p2,p3])
+        promise_allSettle.then((value)=>{
+            console.log(value)
+        })
+
+        //"Promise.race" This will print that which promise resolve first
+        let promise_race = Promise.race([p1,p2,p3])
+        promise_race.then((value)=>{
+            console.log(value) //Her this will print "value 1" bcz P1 setTime is less
+        })//Here is also a catch like suppose if less setTime bali promise reject ho jaye to fir to Error aa jayega
+        //"Promise.any" This will print first those promise which only succesful or resolve Bhale hi ushka time rejected bali se jyada hi kyu na ho
+        let promise_any = Promise.any([p1,p2,p3])
+        promise_any.then((value)=>{
+            console.log(promise_any)
+        })
+
+        //"Promise.reject" This will return only those promise which has not resolved
+        let promise_reject = Promise.reject(new Error("Hey This is Error"))
+        promise_reject.then((value)=>{
+            console.log(promise_reject)
+        })
+        //"Promise.reject" This will return only those promise which has not resolved
+        let resolve = Promise.resolve(6)
+        promise_resolve.then((value)=>{
+            console.log(promise_resolve)
+        })
+
+
+    </script>
+</body>
+</html>
