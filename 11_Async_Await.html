@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async and Await Promise</title>
+</head>
+
+<body>
+    <h1>Async and Await Promise</h1>
+
+    <script>
+        async function Weather() {
+            let Delhi_Weather = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("27° C")
+                }, 5000)
+            })
+            let Kanpur_Weather = new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("31° C")
+                }, 2000)
+            })
+            //First way:-
+            /* Delhi_Weather.then(alert)
+            Kanpur_Weather.then(alert) */
+
+            //Second way:-
+            console.log("Fetching delhi weather, Please wait...")
+            let delhiW = await Delhi_Weather
+            console.log("Fetched delhi weather is:- "+delhiW)
+
+            console.log("Fetching kanpur weather, Please wait...")
+            let kanpurW = await Kanpur_Weather
+            console.log("Fetched kanpur weather is:- "+kanpurW)
+            return [delhiW, kanpurW]
+        }
+        function Dubey(){
+            console.log("I will not wait for anyone")
+        }
+        console.log("Today Weather is:-")
+        //Weather()
+
+        let a = Weather()
+        a.then((value)=>{
+            console.log(value)
+        })
+        let b = Dubey()
+        console.log(b)
+
+        /* async function Abhay(){
+            return 5
+        }
+        Abhay().then((x)=>{
+            alert(x)
+        }) */
+    </script>
+</body>
+
+</html>
