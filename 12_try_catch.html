@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+    <h1>Error Handling</h1>
+
+    <script>
+        const useraname = "abhay2767"
+        const password = "Abhay2767"
+        console.log("Error Handling using 'try-catch'")
+        setTimeout(()=>{
+            console.log("Hacking wifi...Please wait...")
+        }, 1000)
+        /* console.log(abhay) */ 
+        //This will raise an Error and stop the execution of code
+        //to handle this king of Error we use 'try-catch' and continue the execution of code.
+        try{
+            console.log(abhay)
+        } catch(error){
+            console.log(error)
+        }
+        setTimeout(()=>{
+            console.log("Fetching username and password...Please wait...")
+        },2000)
+        setTimeout(()=>{
+            console.log("Hacking Rahul facebook account...Please wait...")
+        },3000)
+        setTimeout(()=>{
+            console.log(`Username is ${useraname} and password is ${password}`)
+        },4000)
+
+        /* trt-y-catch works synchronously.
+            If an execution happens in scheduled code, like in setTimeout,
+            then try-catch was not catch it */
+
+            /* try{
+                setTimeout(()=>{
+                    console.log(hello)
+                }, 100)
+            } catch(error){
+                console.log(error)
+            } */
+
+        //Now you have to choose this way
+        try{
+                setTimeout(()=>{
+                    try{
+                        console.log(hello)
+                    } catch(error){
+                        console.log(error)
+                    }
+                }, 100)
+            } catch(error){
+                console.log(error)
+            }
+        /* Thats beacuse the 'console.log' itself is executed later,
+            when the engine has already left the try...catch construct.
+         */
+
+    </script>
+</body>
+</html>
