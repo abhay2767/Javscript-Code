@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Object or Custom Error</title>
+</head>
+<body>
+    <h1>Error Object or Custom Error</h1>
+
+    <script>
+        console.log("Error Object or Custom Error")
+        try {
+            console.log(abhay)
+            throw new ReferenceError("Programming is good")
+        } catch (error) {
+            console.log(error.name) //Error Object-1
+            console.log(error.message) //Error Object-2
+            console.log(error.stack) //Error Object-3
+        }
+
+        try{
+            let age = 10
+            console.log(age)
+            if(age<=18){
+                throw new ReferenceError("This is not true")
+            }
+        } catch(error){
+            console.log(error.name) //Error Object-1
+            console.log(error.message) //Error Object-2
+            console.log(error.stack) //Error Object-3
+        }
+    </script>
+</body>
+</html>
