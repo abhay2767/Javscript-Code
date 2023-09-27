@@ -15,6 +15,8 @@
         //sessionStorage.removeItem("name")
         //sessionStorage.clear()
 
+        //When you open 2 tap in browser and you can may be make some change in localSession
+        // and autometically changes will occured in another opened tab. 
         window.onstorage = (e) =>{
             alert("Change")
             console.log(e)
