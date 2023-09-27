@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session Storage</title>
+</head>
+<body>
+    <h1>Session Storage</h1>
+
+    <script>
+        let key = "name"
+        let value = "Abhay Dubey"
+        sessionStorage.setItem(key, value)
+        //sessionStorage.removeItem("name")
+        //sessionStorage.clear()
+
+        window.onstorage = (e) =>{
+            alert("Change")
+            console.log(e)
+        }
+    </script>
+</body>
+</html>
