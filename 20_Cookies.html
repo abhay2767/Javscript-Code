@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies</title>
+</head>
+
+<body>
+    <h1>Cookies</h1>
+
+    <script>
+        document.cookie = "Name = Abhay"
+        document.cookie = "Email = abhaydubey2767@gmail.com"
+        document.cookie = "Name = Abhay Dubey"
+
+        let key = "Mobile"
+        let value = 8859022825
+        document.cookie = `${key} = ${value}`
+
+        // Encodes characters such as ?,=,/,&,:
+        console.log(`?x=${encodeURIComponent('test?')}`);
+        // Expected output: "?x=test%3F"
+
+        console.log(`?x=${encodeURIComponent('шеллы')}`);
+        // Expected output: "?x=%D1%88%D0%B5%D0%BB%D0%BB%D1%8B"
+        console.log(`${decodeURIComponent('%D1%88%D0%B5%D0%BB%D0%BB%D1%8B')}`);
+        //Expected output: шеллы
+    </script>
+</body>
+
+</html>
