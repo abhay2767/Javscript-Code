@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+<body>
+    <h1>Inheritance</h1>
+    <script>
+        class Animal{
+            constructor(name, color){
+                this.name = name
+                this.color = color
+            }
+            run(){
+                console.log(this.name+ " is running..")
+            }
+            shout(){
+                console.log(this.name+ " is shouting")
+            }
+        }
+        class Monkey extends Animal{
+            eatBanana (){
+                console.log(this.name+ " is eating banana")
+            }
+            jump(){
+                console.log(this.name+ " is jumping")
+            }
+        }
+        let ani = new Animal("Bruno", "white")
+        let mon = new Monkey("Chimpanji", "Black")
+
+        ani.shout()
+        mon.eatBanana()
+        mon.run()
+        mon.jump()
+        
+        //ani.jump() this will raise an error because Parent class can not use the property of child class.
+    </script>
+    
+</body>
+</html>

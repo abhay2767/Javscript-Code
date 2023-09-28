@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getter, setter, and Instance Of Operator</title>
+</head>
+<body>
+    <h1>getter, setter, and Instance Of Operator</h1>
+    <script>
+        class Animal{
+            constructor(name){
+                this._name = name
+            }
+            fly(){
+                console.log("M ud skta hu")
+            }
+            //get and set keyword 
+            get name(){
+                return this._name
+            }
+            set name(newName){
+                this._name = newName
+            }
+
+        }
+        class Rabbit extends Animal{
+            eatCarrot(){
+                console.log("eating carrot")
+            }
+        }
+        let bird = new Animal("crow")
+        bird.fly()
+        console.log(bird.name)
+        bird.name = "pigen" //now you can the name here
+        console.log(bird.name)
+
+        //Using instanceof keyword we can verify that is that a instance of classname
+        let c = 56
+        console.log(c instanceof Animal)
+        console.log(bird instanceof Animal)
+        let r = new Rabbit()
+        console.log(r instanceof Animal)
+    </script>
+</body>
+</html>

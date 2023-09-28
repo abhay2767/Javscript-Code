@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Overriding</title>
+</head>
+<body>
+    <h1>Method Overriding</h1>
+    <script>
+        class Employee{
+            loged_in(){
+                console.log(`Employee has logged in`)
+            }
+            loged_out(){
+                console.log(`Employee has logged out`)
+            }
+            Req_leave(leaves){
+                console.log(`Employee has requested ${leaves} leaves`)
+            }
+        }
+        class Programmer extends Employee{
+            Salary(rupees){
+                console.log(`Salary is credited of rupee ${rupees}`)
+            }
+            //Method Overriding
+            Req_leave(leaves){
+                super.Req_leave(leaves)
+                //console.log(`Employee has requested ${leaves+1} leaves(one extra)`)
+                console.log(`One Extra is granted total ${leaves+1}`)
+            }
+        }
+        let emp = new Employee()
+        emp.loged_in()
+        emp.Req_leave(5)
+
+        let coder = new Programmer()
+        coder.loged_in()
+        coder.Salary(50000)
+        coder.Req_leave(4)
+        coder.loged_out()
+
+        emp.Req_leave(10)
+    </script>
+</body>
+</html>

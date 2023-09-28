@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overriding Constructor</title>
+</head>
+<body>
+    <h1>Overriding Constructor</h1>
+    <script>
+        class Employee{
+            constructor(name) {
+                console.log(`${name} - Employee Constructor is Here`)
+                this.name = name
+            }
+            loged_in(){
+                console.log(`Employee has logged in`)
+            }
+            loged_out(){
+                console.log(`Employee has logged out`)
+            }
+            Req_leave(leaves){
+                console.log(`Employee has requested ${leaves} leaves`)
+            }
+        }
+        class Programmer extends Employee{
+            /* constructor(...args){ 
+                super(...args)
+            }
+            // If there is no constructor in the child class.this is created automatically 
+             */
+            constructor(name){
+                super("Abhay ji") //If you are not using super keyword than an Error wil raised. 
+                console.log(`${name} - programmer Constructor is Here`)
+            }
+            Salary(rupees){
+                console.log(`Salary is credited of rupee ${rupees}`)
+            }
+            //Method Overriding
+            Req_leave(leaves){
+                super.Req_leave(leaves)
+                //console.log(`Employee has requested ${leaves+1} leaves(one extra)`)
+                console.log(`One Extra is granted total ${leaves+1}`)
+            }
+        }
+        let emp = new Employee("Dubey")
+        /* emp.loged_in()
+        emp.Req_leave(5) */
+
+        let coder = new Programmer("Abhay")
+        /* coder.loged_in()
+        coder.Salary(50000)
+        coder.Req_leave(4)
+        emp.Req_leave(10)
+        coder.loged_out() */
+
+    </script>
+</body>
+</html>

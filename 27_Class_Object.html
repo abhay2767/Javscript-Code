@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class and Object</title>
+</head>
+<body>
+    <h1>Class and Object</h1>
+    <script>
+        class railwayForm {
+            submit(){
+                alert(this.name+" Form submitted"+this.train_no)
+            }
+            cancel(){
+                alert(this.name+" From Cancelled" +this.train_no)
+            }
+            fillform(Entername,train_no){
+                this.name = Entername
+                this.train_no = train_no
+            }
+        }
+        //Objects of railwayForm Class or create the name for Abhay
+        let Abhay = new railwayForm()
+        //Fill the form with Abhay'details
+        Abhay.fillform("Abhay Dubey", 14420)
+
+        //Objects of railwayForm Class or create the name for Dubey
+        let Dubey = new railwayForm()
+        //Fill the form with Abhay'details
+        Dubey.fillform("Dubey ji",12570)
+        Dubey.fillform("Dubey ji",65470)
+
+        Abhay.submit()
+        Dubey.submit()
+
+        Dubey.cancel()
+    </script>
+</body>
+</html>

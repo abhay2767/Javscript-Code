@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object oriented programming in javascript</title>
+</head>
+<body>
+    <h1>object oriented programming in javascript</h1>
+    <script>
+        let obj = {
+            name: "Abhay",
+            email: "abhaydubey2767@gmail.com",
+            run: ()=>{
+                alert("Wellcome")
+            }
+        }
+        console.log(obj)
+
+        let obj1 = {
+            run: ()=>{
+                alert("Wellcome Back")
+            }
+        }
+        //obj1.run()
+        /* obj.__proto__ = obj1
+        obj.run() */
+
+        obj1.__proto__ = {
+            name1: "Abhay Dubey"
+        }
+        obj.__proto__ = obj1
+        console.log(obj.name1)
+
+    </script>
+</body>
+</html>
