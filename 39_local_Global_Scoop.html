@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local and Global Scoop</title>
+</head>
+<body>
+    <h1>Local and Global Scoop</h1>
+
+    <script>
+        function value(){
+            let x = 100
+            console.log(x)
+             /* let and const provide block level scoop which means that the variable declared inside the 
+                {let a = 10} can not be accessed from the outside the block 
+            */
+        }
+        value()
+        //console.log(x) //raise an Error
+        
+        let a = 10
+        {
+            var b = 20 //'Var' ka global level scoop hota h , 
+            let c = 30 //'let' ka Block level scoop hota h , we use let inside 'for loops' and inside 'condision'
+            const d = 40 //'const' ka Block level scoop hota h.
+           
+        }
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log(d)
+
+        
+    </script>
+</body>
+</html>

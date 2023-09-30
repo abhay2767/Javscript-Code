@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <h1>Arrow Function</h1>
+    <Script>
+        const sayHello = () => console.log("Hello, Abhay")
+        const sayHello1 = name => console.log("Hello, "+name)
+        const sayHello2 = (name,age) => console.log("Hello, "+name + " your age is "+age)
+        sayHello()
+        sayHello1('Abhay Dubey ')
+        sayHello2("Dubey ji",23)
+
+
+
+        const x = {
+            name: "Abhay",
+            age: 23,
+            company: "Google",
+            show: function(){
+                //console.log(this) //This 'this' is an object
+                //let that = this
+                setTimeout(()=>{
+                    //console.log(this) //This 'this' is a global object
+                    console.log("The Employee name is "+this.name +" working in "+this.company + " at age "+this.age)
+                    /* What is 'this':-
+                                    If 'this' is inside an object(if you a made a function using the function keyword then 'this' will be that object).  
+                                    or If we using 'this' inside an event so 'this' inside an event will refer to the element which received that event.      
+                    */
+                },2000)
+            }
+        }
+        console.log(x.name+ " and working in "+x.company + " at age "+x.age)
+        x.show()
+        </Script>
+</body>
+</html>

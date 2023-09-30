@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+
+<body>
+    <h1>Closures</h1>
+    <script>
+        message = "Good Morning"
+        console.log(message)
+
+        /* function greet(){
+            message = "Good afternoon"
+            console.log("Hello: "+message)
+        }
+        greet() */
+
+        /* function greet(){
+            message = "Good afternoon"
+            {
+                let message = "Good night"
+                console.log("Hello: "+message)
+            }
+            console.log(message)
+        }
+        greet() */
+
+        /* function greet(){
+            //let message = "Good afternoon" //This works as Lxical Enviroment
+            {
+                let message = "Good night"
+                console.log("Hello: "+message)
+            }
+            message = "Wellcome"
+            console.log(message)
+            let c = function hello(){
+                console.log("I am Abhay, "+message)
+            }
+            return c
+        }
+        
+        c = greet()
+        c() */
+
+        function returnFunc() {
+            const a = () => {
+                let a = 10
+                console.log(a)
+                const b = () => {
+                    //let a = 20
+                    console.log(a)
+                    const c = () => {
+                        //let a = 30
+                        console.log(a)
+                    }
+                    c()
+                }
+                a=100
+                b()
+            }
+            return a
+        }
+
+        let x = returnFunc()
+        x()
+
+        console.log("Closure:- Closure is function with its lexical environment")
+    </script>
+</body>
+
+</html>

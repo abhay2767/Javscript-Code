@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+</head>
+<body>
+    <h1>Hoisting</h1>
+    <script>
+        //Following two lines will run successfully due to javascript Hoisting
+        greet()
+        console.log(a)
+        //console.log(b) //let-Error:- Cannot access 'b' before initialization
+        //console.log(c) //const- Error:- Cannot access 'c' before initialization
+        console.log("Wellcome")
+        function greet(){
+            console.log("Good Morning")
+        }
+       /*  greet1() //Cannot access 'greet1' before initialization 
+        const greet1= ()=>{  //and this is a function Expression
+            console.log("Good Afternoon")
+        } */
+        var a = 10 //Declaration hoisted to the top but initialization is not
+        let b = 100 //
+        console.log(b)
+        const c = 50
+    </script>
+</body>
+</html>

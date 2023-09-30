@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeStructuring Array and object</title>
+</head>
+<body>
+    <h1>DeStructuring Array and Object</h1>
+    <script>
+        //No need to do like this:-
+        /* let a = arr[0]
+        let b = arr[1] */
+
+        //Do like this using Destructuring
+        let arr = [3,5]
+        let [a,b] = arr
+        console.log(a,b)
+
+        //or
+        let arr1 = [5,9,6,7,3,6]
+        let [a1,b1,c1] = arr1
+        console.log(a1,b1,c1)
+
+        //or
+        let arr2 = [9,4,6,8,3,9,7]
+        let [a2,b2,...rest] = arr2
+        console.log(a2,b2,rest)
+
+        //or
+        let arr3 = [59,46,64,48,53,99,73]
+        let [e, , ,f , ...rest1]=arr3
+        console.log(a,f,rest1)
+
+        //Same we can do with Object
+        //let obj = [52,68,34,95,64,30,79]
+        let {x,y}= {x:1,y:5}
+        console.log(x,y)
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepread Operator</title>
+</head>
+<body>
+    <h1>Sepread Operator</h1>
+    <script>
+        console.log("Sepread Operator")
+        //When we want to convert Arrya to Object than we use Spread operator (key value pairs)
+        let arr = [3,5,8]
+        let obj = {...arr}
+        console.log(obj)
+
+        //Another (We pass the from a Array to a function or when we want to pass value from Array to our Function)
+        function sum(a,b,c){
+            return a+b+c
+        }
+        console.log(sum(...arr))
+
+
+        //When we want to print an Object but also want to change something like their are 4 value in Object and we want that 3 value print same and 1 value i want to chnage.
+        //This will use in when you works on 'React' and "Next-js"
+        let ob = {
+            name: "Abhay",
+            company: "Microsoft",
+            salary: 150000,
+            location: "Banglor"
+        }
+        console.log(ob)
+        console.log({...ob, name: "Dubey ji"}) //Here this will override the value of 'name'
+        console.log({name: "Dubey ji", ...ob}) //this will print the ob object without changing any values
+        
+    </script>
+</body>
+</html>

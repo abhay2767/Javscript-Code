@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Generator</title>
 </head>
+
 <body>
     <h1>Password Generator</h1>
     <script>
-        
+        class Password {
+            constructor() {
+                console.log("Wellcome the password generator")
+                this.pass= ""
+            }
+            generatePassword(len) {
+                let chars = "abcdefghijklmnopqrstuvwxyz"
+                let nums = "123456789"
+                let specialChars = "!@#$%^&*"
+                if (len < 3) {
+                    console.log("Your password should be atleast 3 characters long")
+                }
+                else {
+                    let i = 0
+                    while (i < len) {
+                        this.pass += chars[Math.floor(Math.random() * chars.length)]
+                        this.pass += nums[Math.floor(Math.random() * nums.length)]
+                        this.pass += specialChars[Math.floor(Math.random() * specialChars.length)]
+                        i += 3
+                    }
+
+                    return this.pass
+                }
+            }
+        }
+
+        let p = new Password()
+        console.log(p.generatePassword(7))
     </script>
 </body>
+
 </html>
