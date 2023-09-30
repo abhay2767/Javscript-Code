@@ -4,7 +4,7 @@ const app = express()
 const port = 3000
 
 app.get('/home', (req, res) => {
-    res.sendFile(path.join(__dirname, '/47_index.html')) //serve html file
+    res.sendFile(path.join(__dirname, '/48_index.html')) //serve html file
 }) 
 app.get('/', (req, res) => {
     console.log(req.query.name)
