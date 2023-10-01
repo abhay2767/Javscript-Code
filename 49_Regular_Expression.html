@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expression</title>
+</head>
+<body>
+    <h1>Regular Expression</h1>
+
+    <script>
+        console.log("Regular Expression:-")
+        console.log("A regular expression is a pattern of characters.The pattern is used for searching and replacing characters in strings.The RegExp Object is a regular expression with added Properties and Methods.")
+
+        //Now i want change "very" to "awesome"
+        const text = "Abhay dubey is a very good boy, and he is vary mature person and i am very happy to anounce that he is very calmful person."
+        
+        console.log("1st way:-")
+        console.log(text.replace("very" , "awesome"))
+        console.log("Note:- This will only replace first occurence of word")
+        console.log("2nd way using Regex:-") //https://regexr.com/
+        const regex = /very/g //g for globally means replace "very" globally
+        console.log(text.replace(regex, "sweet"))
+        console.log("Note:- This will replace the word Globally.")
+    </script>
+</body>
+</html>
