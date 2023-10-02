@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Refresher</title>
+</head>
+<body>
+    <h1>JavaScript Refresher</h1>
+    <script>
+        //"use strict"
+        //Listen Event on click when some click
+        document.addEventListener("click", function clickkisnekia(){
+           alert("Click kisne kia h nam batao")
+           let name = prompt("Tell me the name")
+           let con = confirm("Are you sure, Name is right.")
+           console.log(con) //return true/false
+           if(con){
+               console.log(`Accha to Mr.${name} aapne click kia tha, chalo koi bat nhi.`)
+           }
+           else{
+            let name = prompt("Tell me the name")
+            console.log(`Accha to Mr.${name} aapne click kia tha, chalo koi bat nhi.`)
+           }
+           console.log("Khel khatm paisa hazam")
+        })
+
+
+        let obj = {
+            name: "Abhay Dubey",
+            email: "abhaydubey2767@gmail.com",
+            mob: 8859022825,
+            show: function show_details(){
+                console.log(`The name of the Employee is ${this.name} and his email is ${this.email} and mob is ${this.mob}`)
+            },
+            obj1: object = {
+                Id: 22612,
+                rollnum: 902253
+            },
+            arr: ["Apple", "banana", "Papaya"]
+        }
+        console.log(obj)
+        console.log(obj.name)
+        obj.show()
+        console.log(obj.obj1)
+
+        
+    </script>
+</body>
+</html>
